@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+
+    <style>
+
+
+        *{
+            font-family: 'Roboto', sans-serif, 'Noto Sans TC';
+        }
+
+
+        body {
+            height: 200vh;
+            font-size: 1rem;
+        }
+
+        /* navbar css */
+
+        @media screen and ( min-width: 0px){
+            nav .row .dark-bar, nav .nav-wrap .nav-links, nav .nav-btn, nav .nav-btn-icon{
+                display: none;
+            }
+
+            nav .nav-burger{
+                display: block;
+            }
+            .nav-wrap {
+                padding-left: 35px;
+                padding-right: 35px;
+            }
+            nav {
+                position: fixed;
+                top: 0px;
+                position: fixed;
+                width: 100%;
+                box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.13);
+                z-index: 5;
+            
+            }
+            nav.white {
+                background-color: #fff;
+                height: 200px;
+            }
+            .nav-wrap {
+                height: 80px;
+                background-color: #fff;
+                z-index: 1;
+            }
+            .emma-nav-here-logo {
+                width: 90px;
+            }
+
+            .emma-nav-here-logo img{
+                width: 100%;
+
+            }
+
+            .nav-links-a{
+                color: #324354;
+                display: inline;
+                margin: 10px;
+
+            }
+
+            .nav-links-a a, .nav-links-a i {
+                color: #324354;
+                text-decoration: none;
+            }
+
+      
+            .nav-burger a{
+                font-size: 25px;
+                color: #324354;
+
+            }
+
+            .nav-burger i{
+                width: 100%;
+                color: #324354;
+            }
+
+            footer {
+                padding: 2rem 0;
+                position: relative;
+                width: 100%;
+                padding: 43px 0 93px 0;
+                background-color: #333f48;
+            }
+            footer h4 {
+                color: white;
+            }
+            .footer-revamp {
+                background-color: #00142D;
+                padding: 43px calc((100% - 1140px) / 2) 0;
+                color: #748094;
+                padding: 0;
+            }
+            .footer-revamp {
+                font-size: 16px;
+            }
+            .footer-map {
+                min-height: 400px;
+                padding: 0 0 250px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                background: url(./img/footer-map-bg.png) no-repeat -450px -55px/auto 360px #172B4D;
+                z-index:0;
+
+            }
+
+            .footer-map .footer-content {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: calc(2.5rem + 50px);
+                width: 100%;
+            }
+
+
+            .footer-map h4 {
+                font-size: 250%;
+                line-height: calc(10px + 2ex + 10px);
+                margin-bottom: 50px;
+                z-index: 0;
+            }
+
+            .footer-map span.count-animate {
+                position: relative;
+            }
+
+            .footer-map span.count-animate:after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 20px;
+                background-color: #0061FF;
+                position: absolute;
+                bottom: 15px;
+                left: 0;
+                z-index: -1;
+
+
+            }
+
+            .footer-map a {
+                font-size: 106.25%;
+                color: #fff;
+                width: 360px;
+                max-width: 100%;
+                background-color: #0061FF;
+                border-radius: 30px;
+                padding: 11px 0 11px;
+                position: relative;
+                display: inline-block;
+                text-align: center;
+                z-index: 1;
+            }
+
+
+            .footer-map i {
+                font-size: 106.25%;
+                color: #fff;
+                position: relative;
+                transform: translateX(80px);
+
+            }
+
+            .footer-map-img {
+                width: 615px;
+                position: absolute;
+                right: -130px;
+                bottom: 0;
+                pointer-events: none;
+
+            }
+
+            .footer-map-img img{
+                width: 100%;
+            }
+
+            .footer-list-wrap, .footer-bottom-wrap, .footer-lang-wrap {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-bottom: 0;
+            }
+
+            .footer-list-wrap {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding: 50px 20px 0px;
+                border-width: 1px 0;
+                margin-bottom: 0;
+                position: relative;
+            }
+            .footer-list-wrap:before {
+                top: 50px;
+
+            }
+            .footer-list-wrap:before {
+                content: '';
+                width: calc(100% - (25px * 2));
+                height: 1px;
+                background: #172B4D;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 25px;
+            }
+            .footer-col:not(.footer-siteinfo):not(.footer-col-full) {
+                border-bottom: 1px solid #172B4D;
+                position: relative;
+                min-width: 100%;
+            }
+            .footer-col h4 {
+                font-size: 106.25%;
+                color: #fff;
+                margin-bottom: 0;
+                cursor: pointer;
+                padding: 20px 0 19px;
+                line-height: 1;
+                font-weight: 300;
+            }
+
+            .footer-col-line {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .footer-revamp ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .footer-col .nav-item {
+                display: none;
+            }
+
+            .covid-19-wrap a {
+                display: inline-block;
+                width: 225px;
+                text-align: center;
+                background-color: #dbf8ed;
+                padding: 5px 0;
+                color: #000;
+                position: relative;
+                -webkit-animation: bt_move 5s ease infinite;
+                animation: bt_move 5s ease infinite;
+            }
+            .footer-col-full {
+                width: 100%;
+                text-align: left;
+                margin-top: 90px;
+            }
+
+            .footer-bottom-wrap {
+                
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                color: #fff;
+                padding-bottom: 95px;
+                
+            }
+            .footer-siteinfo .button-group {
+                margin-bottom: 0;
+                width: auto;
+            }
+            .button-group {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .footer-siteinfo {
+                font-size: 87.5%;
+                line-height: 1.7;
+                text-align: center;
+                margin-top: 25px;
+                display: flex;
+                flex-wrap: wrap;
+                
+            }
+
+            .footer-siteinfo-link {
+                order: 2;
+            }
+
+            .footer-siteinfo-social{
+                order: 1;
+            }
+
+            .footer-siteinfo-copyright {
+                order: 3;
+            }
+           
+            .footer-siteinfo .button-group a {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                margin-left: 15px;
+                background-color: #172B4D;
+                text-align: center;
+                font-size: 120%;
+                margin-bottom: 10px;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .footer-siteinfo .button-group a:nth-child(1){
+                margin-left: 0px;
+
+            }
+            .footer-siteinfo .nav-siteinfo {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            .footer-siteinfo .nav-siteinfo li {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                /* padding: 7px 0; */
+                position: relative;
+                border: 0;
+                /* width: 100%;
+                justify-content: center; */
+                padding: 0 30px;
+                width: auto;
+                justify-content: unset;
+            }
+
+            .footer-siteinfo .nav-siteinfo li:nth-child(1) {
+                
+                padding: 0px 30px 0px 0px;
+                
+            }
+            .footer-siteinfo .nav-siteinfo a{
+                color: white;
+                padding: 0px 0px 0px 0px;
+                
+            }
+            .footer-siteinfo .nav-siteinfo li+li:before {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 16px;
+                background-color: #748094;
+                position: absolute;
+                top: calc(50% + 1px);
+                left: 0px;
+                transform: translateY(-50%);
+            }
+            .footer-siteinfo .copyright {
+                margin-bottom: 0;
+                text-align: left;
+                color: #748094;
+            }
+
+
+            
+            
+        
+        }
+
+        @media screen and (min-width: 768px){
+            .footer-map {
+                padding-top: 50px;
+                padding-bottom: 50px;
+                background-position: -300px -35px;
+            }
+            .footer-map .footer-content {
+                padding-left: 35px;
+                padding-right: 35px;
+                padding-top: 0px;
+            }
+
+        }
+
+
+        @media screen and ( min-width: 992px){
+            nav .nav-wrap .nav-links,nav .nav-btn, nav .nav-btn-icon{
+                display: block;
+            }
+
+            nav .nav-burger{
+                display: none;
+            }
+
+            nav {
+                font-size: 14px;
+            }
+
+            .nav-wrap {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            nav .row .dark-bar {
+                display: flex;
+                background-color: #000E2B;
+                width: 100%;
+                height: 40px;
+                color: white;
+                padding-right: auto;
+                justify-content: flex-end;
+                align-items: center;
+                padding-left: calc(0.1975 * 100vw - 196.2px);
+                padding-right: calc(0.1975 * 100vw - 196.2px);
+            }
+
+            nav .row .dark-bar a{
+                color: white;
+            }
+
+            .dark-bar-i {
+                padding: 0px 0px 0px 0px;
+            }
+            .dark-bar-a1 {
+                padding: 0px 20px 0px 20px;
+                margin: 0px 0px 0px 20px;
+                border-left: 1px solid #fff;
+                font-size: .8rem;
+                font-weight: 200;
+            }
+            .dark-bar-a {
+                font-size: .8rem;
+                font-weight: 200;
+            }
+
+            .footer-map {
+                padding-top: 50px;
+                padding-bottom: 50px;
+                background-position: -300px -35px;
+            }
+
+            .footer-col .nav-item {
+                display: block;
+
+            }
+            .footer-list-wrap, .footer-bottom-wrap, .footer-lang-wrap {
+                padding-left: 25px;
+                padding-right: 25px;
+                padding-bottom: 80px;
+            }
+            .footer-list-wrap {
+                padding-top: 80px;
+                margin-bottom: 45px;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                border-width: 1px 0;
+                position: relative;
+            }
+            .footer-map .footer-content {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 0px;
+                width: 100%;
+            }
+            .footer-col:not(.footer-siteinfo):not(.footer-col-full) {
+                border-bottom: 0;
+                position: static;
+                min-width: 0;
+            }
+            .footer-siteinfo {
+                font-size: 87.5%;
+                line-height: 1.7;
+            }
+            .copyright {
+                letter-spacing: 0.5px;
+                margin-bottom: 23px;
+            }
+           
+            .footer-col-line {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .footer-col h4 {
+                margin-bottom: 45px;
+                cursor: default;
+                padding: 0;
+                line-height: 1.2;
+            }
+           
+            .footer-nav li {
+                padding-left: 0;
+                margin-bottom: 15px;
+                
+            }
+            .footer-revamp .nav-link {
+                padding: 0;
+                color: #748094;
+            }
+
+            footer .fa-chevron-down {
+                display: none;
+            }
+            .footer-col-full {
+                width: 100%;
+                text-align: right;
+                margin-top: 90px;
+            }
+
+            
+            .footer-list-wrap:after {
+                display: block;
+            }
+            .footer-list-wrap:after, .footer-list-wrap:before {
+                content: '';
+                width: calc(100% - (25px * 2));
+                height: 1px;
+                background: #172B4D;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 25px;
+            }
+            .footer-bottom-wrap {
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+            .footer-siteinfo-link, .footer-siteinfo-social, .footer-siteinfo-copyright {
+                order: unset;
+            }
+            .footer-revamp {
+                padding-bottom: 50px;
+            }
+
+            .footer-siteinfo .nav-siteinfo li {
+                padding: 0px 10px 0px;
+            }
+            .footer-siteinfo .nav-siteinfo li:nth-child(1) {
+                padding: 0px 10px 0px 0px;
+            }
+        }
+
+        @media screen and (min-width: 1121px){
+
+            .footer-list-wrap, .footer-bottom-wrap, .footer-lang-wrap {
+            padding-left: calc(0.1975 * 100vw - 196.2px);
+            padding-right: calc(0.1975 * 100vw - 196.2px);
+            }
+            .footer-map .footer-content {
+                padding-left: calc(0.1975 * 100vw - 196.2px);
+                padding-right: calc(0.1975 * 100vw - 196.2px);
+            }
+
+            
+        }
+
+        @media screen and ( min-width: 1120px){
+            nav {
+                font-size: 15px;
+            }
+
+            .nav-wrap {
+                padding-left: calc(0.1975 * 100vw - 196.2px);
+                padding-right: calc(0.1975 * 100vw - 196.2px);
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+   <nav>
+        <div class="container-fluid">
+            <div class="row align-items-center nav-wrap">
+                <div class="emma-nav-here-logo">
+                    <a href="#">
+                        <img src="./img/emma_here_logo.png" alt="">
+                    </a>
+                </div>
+                <div class="nav-links ml-3">
+                    <div class="nav-links-a">
+                        <a href="#">New Releases</a>
+                    </div>
+                    <div class="nav-links-a">
+                        <a href="#">Woman</a>
+                    </div>
+                    <div class="nav-links-a">
+                        <a href="#">Men</a>
+                    </div>
+                    <div class="nav-links-a">
+                        <a href="#">Beat It</a>
+                    </div>
+                    <div class="nav-links-a">
+                        <a href="#">Meet Up</a>
+                    </div>
+                </div>
+
+                <div class="nav-btn ml-auto d-flex">
+                    <div class="nav-btn-icon">
+                        <span class="iconify" data-icon="carbon:search" data-width="22"></span>
+                    </div>
+                    <div class="nav-btn-icon ml-3">
+                        <span class="iconify" data-icon="iconoir:profile-circled" data-width="22"></span>
+
+                    </div>
+                    <div class="nav-btn-icon ml-3">
+                        <span class="iconify" data-icon="clarity:shopping-cart-line" data-width="22"></span>
+                    </div>
+                   
+                    
+                   
+                </div>
+
+                <div class="nav-burger ml-auto">
+                    <a href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+    </nav>
+
+    <!-- 全亞洲 -->
+    <footer class="footer-revamp">
+        <div class="footer-map">
+          <div class="footer-content">
+            <h4>全亞洲超過<br><span class="count-animate">250,000</span> 個品牌都在使用 SHOPLINE</h4>
+            <a href="#"><span>免費試用 14 天</span><i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="footer-map-img">
+              <img src="./img/earth.png" alt="">
+
+          </div>
+        </div>
+        <div class="footer-list-wrap">
+          <div class="footer-col">
+              <div class="footer-col-line d-flex justify-content-between align-items-center" >
+                <h4>Home</h4><i class="fas fa-chevron-down"></i>
+              </div>
+
+            <ul class="footer-nav">
+              <li class="nav-item"><a class="nav-link" href="#">關於我們</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">認識團隊</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">人才招募</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">合作機會</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">精選夥伴</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">媒體報導</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-line" >
+                <h4>Shop</h4><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul class="footer-nav">
+              <li class="nav-item"><a class="nav-link" href="#">方案費用</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">功能模組</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">客戶案例</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">開店說明會</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">開店諮詢</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-line d-flex justify-content-between align-items-center" >
+                <h4>About</h4><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul class="footer-nav">
+              <li class="nav-item"><a href="#" class="nav-link">網路開店</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">社群購物</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">零售 POS</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">電商物流</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">訂單管理</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">一頁商店</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-line d-flex justify-content-between align-items-center" >
+                <h4>Contact</h4><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul class="footer-nav">
+              <li class="nav-item"><a class="nav-link" href="#">開店秘技</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">版型主題</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">新手問答</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">POS 硬體</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-line d-flex justify-content-between align-items-center" >
+                <h4>Beat It</h4><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul class="footer-nav">
+              <li class="nav-item"><a class="nav-link" href="#">企業旗艦方案</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">跨境電商方案</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">廣告計畫方案</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-line d-flex justify-content-between align-items-center" >
+                <h4>Meat Up</h4><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul class="footer-nav">
+              <li class="nav-item"><a class="nav-link" href="#">Meat Up首頁</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">發起活動</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">看看活動</a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-col-full">
+            <div class="covid-19-wrap">
+              <a href="#">Shop Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-wrap">
+          <div class="footer-siteinfo footer-siteinfo-link">
+            <ul class="nav nav-siteinfo">
+              <li class="nav-item"><a class="nav-link" href="#">網站地圖</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">隱私權政策</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">會員條款</a></li>
+            </ul>
+          </div>
+          <div class="footer-siteinfo footer-siteinfo-social d-flex">
+            <div class="button-group">
+              <a href="#">
+                <div class="icons-facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+              </a>
+              <a href="#">
+                <div class="icons-linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+              </a>
+              <a href="#">
+                <div class="icons-instagram">
+                    <i class="fab fa-instagram"></i>
+                </div>
+              </a>
+              <a href="#">
+                <div class="icons-youtube">
+                    <i class="fab fa-youtube"></i>
+                </div>
+              </a>
+              <a href="#">
+                <div class="icons-brand">
+                    <i class="far fa-comment-dots"></i>
+                </div>
+              </a>
+              <a href="#">
+                <div class="icons-mail">
+                    <i class="far fa-envelope"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="footer-siteinfo footer-siteinfo-copyright">
+            <div class="copyright">服務時間 星期一至五 上午 10 點至晚上 7 點<br>© Copyright 2013-21 SHOPLINE Limited.</div>
+          </div>
+        </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+</body>
+</html>
